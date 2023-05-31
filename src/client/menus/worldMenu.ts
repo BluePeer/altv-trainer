@@ -62,7 +62,7 @@ class CloudHatMenu extends AbstractSubMenu {
         this.addItem(this.opacityItem = new ui.UIMenuListItem("Opacity", undefined, new ui.ItemsCollection([...Array(11).keys()])), (index?: number) => Game.setCloudHatOpacity(index / 10))
         Enum.getStringKeys(CloudHat).forEach(cloudHat => this.addItem(new ui.UIMenuItem(cloudHat.toUpperCase())/*, () => Game.setCloudHat(Enum.getStringValues(CloudHat).find(value => value == CloudHat[cloudHat]))*/))
         this.menuObject.MenuOpen.on(() => {
-            let opacityIndex = (Math.round((game.getCloudHatOpacity() + Number.EPSILON) * 10) / 10)
+            let opacityIndex = (Math.round((game.getCloudsAlpha() + Number.EPSILON) * 10) / 10)
             this.opacityItem.Index = opacityIndex * Math.ceil(Math.log10(opacityIndex + 1)) * 10
         })
     }

@@ -8,7 +8,7 @@ export class Game {
     static isCreatingVehicle = false
 
     static async loadAnimationDict(dict: string) {
-        await new Promise((resolve) => {
+        await new Promise<void>((resolve) => {
             game.requestAnimDict(dict)
             tick.register("game:loadAnim", () => {
                 if (game.hasAnimDictLoaded(dict)) {
@@ -20,7 +20,7 @@ export class Game {
     }
 
     static async requestModel(hash: number) {
-        await new Promise((resolve) => {
+        await new Promise<void>((resolve) => {
             if (this.isModelValid(hash)) {
                 game.requestModel(hash)
                 tick.register("game:requestModel", () => {

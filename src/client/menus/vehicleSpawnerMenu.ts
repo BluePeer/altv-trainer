@@ -17,7 +17,7 @@ export class VehicleSpawnerMenu extends AbstractSubMenu {
     constructor(parentMenu: AbstractMenu, title: string) {
         super(parentMenu, title)
         this.addUserInputItem(this.customVehicleItem = new ui.UIMenuItem("Spawn Custom Vehicle"), async () => Vehicle.create(alt.hash(await Game.getUserInput())))
-        Enum.getValues(VehicleClass).forEach(vehicleClass => this.classMenus.push(new ClassMenu(this, game.getLabelText("VEH_CLASS_" + vehicleClass), +vehicleClass)))
+        Enum.getValues(VehicleClass).forEach(vehicleClass => this.classMenus.push(new ClassMenu(this, game.getFilenameForAudioConversation("VEH_CLASS_" + vehicleClass), +vehicleClass)))
         Enum.getValues(VehicleHash).forEach(hash => this.getVehicleClassMenu(game.getVehicleClassFromName(+hash)).addVehicle(+hash))
         this.classMenus.forEach(menu => Menu.sortMenuItems(menu.menuObject))
     }
@@ -36,7 +36,7 @@ class ClassMenu extends AbstractSubMenu {
     }
 
     addVehicle(hash: VehicleHash) {
-        let item = new ui.UIMenuItem(game.getLabelText(game.getDisplayNameFromVehicleModel(hash)))
+        let item = new ui.UIMenuItem(game.getFilenameForAudioConversation(game.getDisplayNameFromVehicleModel(hash)))
         this.addItem(item, () => Vehicle.create(hash))
     }
 }

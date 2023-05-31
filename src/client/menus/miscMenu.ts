@@ -1,7 +1,7 @@
 import * as alt from "alt-client"
 import * as game from "natives"
 import * as ui from "@durtyfree/altv-nativeui"
-import * as json from "../../../package.json"
+import * as json from "../../package.json"
 import { Font } from "../enums/font"
 import { Player } from "../utils/player"
 import { Text2D } from "../common/text2D"

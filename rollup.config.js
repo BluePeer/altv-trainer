@@ -22,7 +22,7 @@ export default [{
     output: {
         dir: 'out',
         format: 'es',
-        entryFileNames: '[name].mjs'
+        entryFileNames: '[name].js'
     },
     external: ["alt-server"],
     plugins: [
