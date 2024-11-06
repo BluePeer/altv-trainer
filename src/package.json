@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/Jayreen58/altv-trainer#readme",
   "devDependencies": {
-    "@altv/types-client": "^2.1.8",
-    "@altv/types-natives": "^1.5.3",
-    "@altv/types-server": "^1.4.4",
+    "@altv/types-client": "^16.2.7",
+    "@altv/types-natives": "^16.2.1",
+    "@altv/types-server": "^16.2.5",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
     "@rollup/plugin-typescript": "^6.0.0",

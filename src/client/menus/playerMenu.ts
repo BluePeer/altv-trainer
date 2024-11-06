@@ -49,7 +49,7 @@ export class PlayerMenu extends AbstractSubMenu {
             Menu.lockMenuItem(this.suicideItem)
             await Player.playAnimation("mp_suicide", "pill")
             alt.setTimeout(() => {
-                game.setEntityHealth(alt.Player.local.scriptID, 0, 0)
+                game.setEntityHealth(alt.Player.local.scriptID, 0, 0,0)
                 Menu.unlockMenuItem(this.suicideItem)
             }, 3200)
         })

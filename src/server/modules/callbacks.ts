@@ -93,7 +93,7 @@ class Callbacks {
         }
         this.callbacks["game:getPlayerIdentifiers"] = (_, args) => {
             let target = args[0] as alt.Player
-            return [target.hwidHash, target.hwidExHash, target.socialId]
+            return [target.hwidHash, target.hwidExHash, target.socialID]
         }
         this.callbacks["game:setTime"] = (_, args) => {
             alt.Player.all.forEach(player => player.setDateTime(0, 0, 0, args[0], args[1], args[2]))
